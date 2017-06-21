@@ -29,7 +29,8 @@ export default class victoryDemo extends Component {
     changeTimeToMountText() {
         if (!this.state.shouldChangeText) return;
 
-        const timeToMountText = "Mounting of " + this.state.numberOfCharts + " empty Charts took " + (new Date() - this.state.renderStartTime) + " ms";
+        const timeToMountText = "Mounting of " + this.toNumber(this.state.numberOfCharts) + " charts with " + this.toNumber(this.state.numberOfLines)
+        + " lines took " + (new Date() - this.state.renderStartTime) + " ms";
         this.setState({shouldChangeText: false, timeToMountText: timeToMountText})
     }
 
